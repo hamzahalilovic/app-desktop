@@ -2498,11 +2498,13 @@
     react-popper "^2.2.3"
     styled-components "^5.1.1"
 
-"@blend-ui/css-grid@1.0.4-alpha.0":
-  version "1.0.4-alpha.0"
-  resolved "https://registry.yarnpkg.com/@blend-ui/css-grid/-/css-grid-1.0.4-alpha.0.tgz#7312d553911ac6f335b56ea4f88d8057a7c92ca3"
-  integrity sha512-Z+XPHpoJ7LBbtFCwE/ue373a2sTivIp7ol9yXqC5MAL8mb0KoBRtdZ8vnFRkUnBpGQOM/SUxH220yyUg2BEknQ==
+"@blend-ui/css-grid@1.0.2-alpha.0":
+  version "1.0.2-alpha.0"
+  resolved "https://registry.yarnpkg.com/@blend-ui/css-grid/-/css-grid-1.0.2-alpha.0.tgz#7caf2fa92e41c326af8cff4af6573989559e3514"
+  integrity sha512-dvkKMR8SmoCRqHQaeUcmAYmkC7yTvD3guCi1QKhHmSYQC38QvJ0CMBIKqGdjpQuNYnEywLfjCuNSDp1xjwwCkA==
   dependencies:
+    react "^16.13.0"
+    react-dom "^16.13.0"
     styled-components "^5.2.0"
     styled-css-grid "^1.2.1"
     styled-system "^5.1.5"
@@ -2514,7 +2516,19 @@
   dependencies:
     "@reach/auto-id" "^0.12.1"
 
-"@blend-ui/icons@1.1.6-alpha.0", "@blend-ui/icons@^1.1.6-alpha.0":
+"@blend-ui/icons@1.1.5-alpha.0":
+  version "1.1.5-alpha.0"
+  resolved "https://registry.yarnpkg.com/@blend-ui/icons/-/icons-1.1.5-alpha.0.tgz#4397ca8eca5350803abff5ae0c43d69862e62534"
+  integrity sha512-3gKcAHuw06dc6j1KXhKMeotYLW8YLDZZChiMhViIUy8lnFFgG+h44YSllciBsIBxrqutu3U2sqEbBPSWJOD5wA==
+  dependencies:
+    "@iconify/react" "^1.1.3"
+    "@styled-system/theme-get" "^5.1.2"
+    react "^16.13.1"
+    react-dom "^16.13.1"
+    styled-components "^5.1.1"
+    styled-system "^5.1.5"
+
+"@blend-ui/icons@^1.1.6-alpha.0":
   version "1.1.6-alpha.0"
   resolved "https://registry.yarnpkg.com/@blend-ui/icons/-/icons-1.1.6-alpha.0.tgz#86464a7725254ae087344bcc66bc071417af1903"
   integrity sha512-O/FgRFcnAr+I69A94af3O6Vp/Yhkz1AI1f62nrvo8UGCeKon7TZBLjl74Lvz8DTjq/NjbyWRPNpnnKlb9tzqhA==
@@ -2524,39 +2538,48 @@
     styled-components "^5.1.1"
     styled-system "^5.1.5"
 
-"@blend-ui/modal@1.0.8-alpha.0":
-  version "1.0.8-alpha.0"
-  resolved "https://registry.yarnpkg.com/@blend-ui/modal/-/modal-1.0.8-alpha.0.tgz#0f4a35de3a780ec9762dd16653f9e142b5dd1cbd"
-  integrity sha512-hSJG/G2r3sG8kn4SlKt7uX32cgNRPo7fVDpW+UXSxOU9DGJmszCyoMqYow7b8lo1OcdxE6pMd7mWlS8zxRtD6Q==
+"@blend-ui/modal@1.0.6-alpha.0":
+  version "1.0.6-alpha.0"
+  resolved "https://registry.yarnpkg.com/@blend-ui/modal/-/modal-1.0.6-alpha.0.tgz#ce9e0a08041f5c99092a708278d4f41488d87241"
+  integrity sha512-2UQwcks4QGIg+wV7lovsE8KlZvYnKMp9bVw8CFjMpTQqMw32kiIK/7ddMY6LzE2n+wbq+f6DzsIMp02LrucH9g==
   dependencies:
-    "@reach/auto-id" "^0.12.1"
+    "@reach/auto-id" "^0.11.2"
     aria-hidden "^1.1.1"
     body-scroll-lock "^3.1.5"
     exenv "^1.2.2"
+    react "^16.13.0"
+    react-dom "^16.13.0"
     styled-components "^5.2.0"
     styled-system "^5.1.5"
 
-"@blend-ui/progress@1.0.6-alpha.0":
-  version "1.0.6-alpha.0"
-  resolved "https://registry.yarnpkg.com/@blend-ui/progress/-/progress-1.0.6-alpha.0.tgz#3411937b807052e8893d9c087a3ca81ca6f09a96"
-  integrity sha512-4rzlbVKlrAGQ9a9WF56+zBMoQYL0fh6Ai/rzHmrWMUIUPKyBtLrBssjTfNU+5ZswViRadtO3UBFq5GcTIhz/nw==
-
-"@blend-ui/tabs@1.0.5-alpha.0":
-  version "1.0.5-alpha.0"
-  resolved "https://registry.yarnpkg.com/@blend-ui/tabs/-/tabs-1.0.5-alpha.0.tgz#a76ca8993916456e0fa3ffb28df2f3b57d1e12d0"
-  integrity sha512-OM4jzq+AVmgH9ig2VMOskBOanOw8JMzHoIKlXcEICi8RY66RUXQszKAXx/K6SEoMyJy2P4UGY28/pREauMfsgA==
+"@blend-ui/progress@1.0.4-alpha.0":
+  version "1.0.4-alpha.0"
+  resolved "https://registry.yarnpkg.com/@blend-ui/progress/-/progress-1.0.4-alpha.0.tgz#c2bfbe496577ca85d8cad41f9f8b5400e3146632"
+  integrity sha512-F+RzKK5f5TUXvAxCMjK6QU+IbEKkOXK4zIGivztMar2/rpgEkSlCQNyrFglAwalu/6Io+isQR3ziaFvs7E/gpg==
   dependencies:
+    react "^16.13.0"
+    react-dom "^16.13.0"
+
+"@blend-ui/tabs@1.0.3-alpha.0":
+  version "1.0.3-alpha.0"
+  resolved "https://registry.yarnpkg.com/@blend-ui/tabs/-/tabs-1.0.3-alpha.0.tgz#5e2f2b3e5c8ccedb1e319602e5749acfc2ef9cc9"
+  integrity sha512-wxCDkG9T1S8oFW1suCEfrz+cj680YijRZfHnE8KtW4d9U3mMaSE4APPNLK1L9K+GKmLvpnzSxphsy+tvkJPBOw==
+  dependencies:
+    react "^16.13.0"
+    react-dom "^16.13.0"
     styled-components "^5.2.0"
     styled-system "^5.1.5"
 
-"@blend-ui/toast@0.0.11-alpha.0":
-  version "0.0.11-alpha.0"
-  resolved "https://registry.yarnpkg.com/@blend-ui/toast/-/toast-0.0.11-alpha.0.tgz#ae8594fcdc35a43882fc0f4041ec3dfe17c9fabd"
-  integrity sha512-z04L1J+6dfyYNfoYSTxNe2nYrNOnmO/3/aTo1HFY+9cW1fjfaKAaU8wfeghyVudeNEhgLwvuvGZe4IXWuqi3ng==
+"@blend-ui/toast@0.0.9-alpha.0":
+  version "0.0.9-alpha.0"
+  resolved "https://registry.yarnpkg.com/@blend-ui/toast/-/toast-0.0.9-alpha.0.tgz#e4b0e9043fb75c4f28a22d8b3282514517c36859"
+  integrity sha512-Y/DQw2oH7CXCp8pEmTr5T691FHrsKA/SYLfmcNbprPav3Xs5BGGgwqPb7Yxc7FEC3cw+vYZRygX05YPFzW2kZQ==
   dependencies:
-    "@reach/auto-id" "^0.12.1"
+    "@reach/auto-id" "^0.11.2"
     aria-hidden "^1.1.1"
     exenv "^1.2.2"
+    react "^16.13.0"
+    react-dom "^16.13.0"
 
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
@@ -3048,6 +3071,14 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.6.0.tgz#f022195afdfc942e088ee2101285a1d31c7d727f"
   integrity sha512-cPqjjzuFWNK3BSKLm0abspP0sp/IGOli4p5I5fKFAzdS8fvjdOwDCfZqAaIiXd9lPkOWi3SUUfZof3hEb7J/uw==
 
+"@reach/auto-id@^0.11.2":
+  version "0.11.2"
+  resolved "https://registry.yarnpkg.com/@reach/auto-id/-/auto-id-0.11.2.tgz#c66a905c5401d1ac3da8d26165b8d27d6e778fa6"
+  integrity sha512-YZ21b0Kb88wJ0t7QjSznWOYskARQMnmXY9Y2XZ5RyYcZ2krT4s3+ghghpfaPs6BKcrZDonZCrU65OFDJPa1jAw==
+  dependencies:
+    "@reach/utils" "0.11.2"
+    tslib "^2.0.0"
+
 "@reach/auto-id@^0.12.1":
   version "0.12.1"
   resolved "https://registry.yarnpkg.com/@reach/auto-id/-/auto-id-0.12.1.tgz#2e4a7250d2067ec16a9b4ea732695bc75572405c"
@@ -3065,6 +3096,15 @@
     invariant "^2.2.3"
     prop-types "^15.6.1"
     react-lifecycles-compat "^3.0.4"
+
+"@reach/utils@0.11.2":
+  version "0.11.2"
+  resolved "https://registry.yarnpkg.com/@reach/utils/-/utils-0.11.2.tgz#be1f03650db56fd67a16d3fc70e5262cdb139cec"
+  integrity sha512-fBTolYj+rKTROXmf0zHO0rCWSvw7J0ALmYj5QxW4DmITMOH5uyRuWDWOfqohIGFbOtF/sum50WTB3tvx76d+Aw==
+  dependencies:
+    "@types/warning" "^3.0.0"
+    tslib "^2.0.0"
+    warning "^4.0.3"
 
 "@reach/utils@0.12.1":
   version "0.12.1"
@@ -13382,6 +13422,16 @@ react-docgen@^5.0.0:
     node-dir "^0.1.10"
     strip-indent "^3.0.0"
 
+react-dom@^16.13.0, react-dom@^16.13.1:
+  version "16.14.0"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.14.0.tgz#7ad838ec29a777fb3c75c3a190f661cf92ab8b89"
+  integrity sha512-1gCeQXDLoIqMgqD3IO2Ah9bnf0w9kzhwN5q4FGnHZ67hBm9yePzB5JJAIQCc8x3pFnNlwFq4RidZggNAAkzWWw==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
+    scheduler "^0.19.1"
+
 react-dom@^17.0.1:
   version "17.0.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.1.tgz#1de2560474ec9f0e334285662ede52dbc5426fc6"
@@ -13660,6 +13710,15 @@ react-transition-group@^4.3.0:
     "@babel/runtime" "^7.5.5"
     dom-helpers "^5.0.1"
     loose-envify "^1.4.0"
+    prop-types "^15.6.2"
+
+react@^16.13.0, react@^16.13.1:
+  version "16.14.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.14.0.tgz#94d776ddd0aaa37da3eda8fc5b6b18a4c9a3114d"
+  integrity sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
     prop-types "^15.6.2"
 
 react@^17.0.1:
@@ -14294,6 +14353,14 @@ saxes@^5.0.0:
   integrity sha512-5LBh1Tls8c9xgGjw3QrMwETmTMVk0oFgvrFSvWx62llR2hcEInrKNZ2GZCCuuy2lvWrdl5jhbpeqc5hRYKFOcw==
   dependencies:
     xmlchars "^2.2.0"
+
+scheduler@^0.19.1:
+  version "0.19.1"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.19.1.tgz#4f3e2ed2c1a7d65681f4c854fa8c5a1ccb40f196"
+  integrity sha512-n/zwRWRYSUj0/3g/otKDRPMh6qv2SYMWNq85IEa8iZyAv8od9zDYpGSnpBEjNgcMNq6Scbu5KfIPxNF72R/2EA==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
 
 scheduler@^0.20.1:
   version "0.20.1"
