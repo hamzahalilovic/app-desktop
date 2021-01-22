@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.js": "./main.66b54b2cc4dbce1e62ea.bundle.js",
+    "main.js.map": "./main.66b54b2cc4dbce1e62ea.bundle.js.map",
+    "runtime~main.js": "./runtime~main.66b54b2cc4dbce1e62ea.bundle.js",
+    "runtime~main.js.map": "./runtime~main.66b54b2cc4dbce1e62ea.bundle.js.map",
+    "vendors~main.js": "./vendors~main.66b54b2cc4dbce1e62ea.bundle.js",
+    "vendors~main.js.map": "./vendors~main.66b54b2cc4dbce1e62ea.bundle.js.map",
+    "3.66b54b2cc4dbce1e62ea.bundle.js": "./3.66b54b2cc4dbce1e62ea.bundle.js",
+    "3.66b54b2cc4dbce1e62ea.bundle.js.map": "./3.66b54b2cc4dbce1e62ea.bundle.js.map",
+    "4.66b54b2cc4dbce1e62ea.bundle.js": "./4.66b54b2cc4dbce1e62ea.bundle.js",
+    "4.66b54b2cc4dbce1e62ea.bundle.js.map": "./4.66b54b2cc4dbce1e62ea.bundle.js.map",
+    "5.66b54b2cc4dbce1e62ea.bundle.js": "./5.66b54b2cc4dbce1e62ea.bundle.js",
+    "5.66b54b2cc4dbce1e62ea.bundle.js.map": "./5.66b54b2cc4dbce1e62ea.bundle.js.map",
+    "6.66b54b2cc4dbce1e62ea.bundle.js": "./6.66b54b2cc4dbce1e62ea.bundle.js",
+    "6.66b54b2cc4dbce1e62ea.bundle.js.map": "./6.66b54b2cc4dbce1e62ea.bundle.js.map",
+    "7.66b54b2cc4dbce1e62ea.bundle.js": "./7.66b54b2cc4dbce1e62ea.bundle.js",
+    "7.66b54b2cc4dbce1e62ea.bundle.js.map": "./7.66b54b2cc4dbce1e62ea.bundle.js.map",
+    "8.66b54b2cc4dbce1e62ea.bundle.js": "./8.66b54b2cc4dbce1e62ea.bundle.js",
+    "8.66b54b2cc4dbce1e62ea.bundle.js.map": "./8.66b54b2cc4dbce1e62ea.bundle.js.map",
+    "iframe.html": "./iframe.html",
+    "static/media/app-market.svg": "./static/media/app-market.62c6dcb3.svg",
+    "static/media/background.b3d5f165.png": "./static/media/background.b3d5f165.png",
+    "static/media/data-console.a61c4bd2.svg": "./static/media/data-console.a61c4bd2.svg",
+    "static/media/dev-console.c88b4a2a.svg": "./static/media/dev-console.c88b4a2a.svg",
+    "static/media/display-app.ab435327.svg": "./static/media/display-app.ab435327.svg",
+    "static/media/prifina.a5396de3.svg": "./static/media/prifina.a5396de3.svg",
+    "static/media/profile-cards.2520c23d.svg": "./static/media/profile-cards.2520c23d.svg",
+    "static/media/settings.f372eb4e.svg": "./static/media/settings.f372eb4e.svg",
+    "static/media/smart-search.d84f326c.svg": "./static/media/smart-search.d84f326c.svg",
+    "vendors~main.66b54b2cc4dbce1e62ea.bundle.js.LICENSE.txt": "./vendors~main.66b54b2cc4dbce1e62ea.bundle.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "runtime~main.66b54b2cc4dbce1e62ea.bundle.js",
+    "vendors~main.66b54b2cc4dbce1e62ea.bundle.js",
+    "main.66b54b2cc4dbce1e62ea.bundle.js"
+  ]
+}
