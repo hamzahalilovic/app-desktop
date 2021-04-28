@@ -1,0 +1,68 @@
+var _path, _rect, _rect2, _rect3, _rect4, _path2, _path3, _rect5, _path4;
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+import * as React from "react";
+
+function SvgPhone(props) {
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    width: 68,
+    height: 135,
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), _path || (_path = /*#__PURE__*/React.createElement("path", {
+    d: "M0 6a6 6 0 016-6h54a8 8 0 018 8v121a6 6 0 01-6 6H8a8 8 0 01-8-8V6z",
+    fill: "#01544E"
+  })), _rect || (_rect = /*#__PURE__*/React.createElement("rect", {
+    width: 66,
+    height: 133,
+    rx: 5,
+    fill: "#00847A"
+  })), _rect2 || (_rect2 = /*#__PURE__*/React.createElement("rect", {
+    x: 2,
+    y: 6,
+    width: 62,
+    height: 116,
+    rx: 5,
+    fill: "#F5F8F7"
+  })), _rect3 || (_rect3 = /*#__PURE__*/React.createElement("rect", {
+    x: 24,
+    y: 125,
+    width: 18,
+    height: 5,
+    rx: 2.5,
+    fill: "#F5F8F7"
+  })), _rect4 || (_rect4 = /*#__PURE__*/React.createElement("rect", {
+    x: 24,
+    y: 3,
+    width: 18,
+    height: 1,
+    rx: 0.5,
+    fill: "#F5F8F7"
+  })), _path2 || (_path2 = /*#__PURE__*/React.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M46 49v9h-3.62A12.963 12.963 0 0133 62a12.963 12.963 0 01-9.38-4H20v-9c0-7.18 5.82-13 13-13s13 5.82 13 13z",
+    fill: "#01544E"
+  })), _path3 || (_path3 = /*#__PURE__*/React.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M42 49a9 9 0 10-18 0v9h18v-9z",
+    fill: "#F5F8F7"
+  })), _rect5 || (_rect5 = /*#__PURE__*/React.createElement("rect", {
+    x: 14,
+    y: 58,
+    width: 38,
+    height: 34,
+    rx: 3,
+    fill: "#00847A"
+  })), _path4 || (_path4 = /*#__PURE__*/React.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M35 74.236a3 3 0 10-4 0V80a2 2 0 104 0v-5.764z",
+    fill: "#01544E"
+  })));
+}
+
+export default "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjgiIGhlaWdodD0iMTM1IiB2aWV3Qm94PSIwIDAgNjggMTM1IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMCA2QzAgMi42ODYyOSAyLjY4NjI5IDAgNiAwSDYwQzY0LjQxODMgMCA2OCAzLjU4MTcyIDY4IDhWMTI5QzY4IDEzMi4zMTQgNjUuMzEzNyAxMzUgNjIgMTM1SDhDMy41ODE3MiAxMzUgMCAxMzEuNDE4IDAgMTI3VjZaIiBmaWxsPSIjMDE1NDRFIi8+CjxyZWN0IHdpZHRoPSI2NiIgaGVpZ2h0PSIxMzMiIHJ4PSI1IiBmaWxsPSIjMDA4NDdBIi8+CjxyZWN0IHg9IjIiIHk9IjYiIHdpZHRoPSI2MiIgaGVpZ2h0PSIxMTYiIHJ4PSI1IiBmaWxsPSIjRjVGOEY3Ii8+CjxyZWN0IHg9IjI0IiB5PSIxMjUiIHdpZHRoPSIxOCIgaGVpZ2h0PSI1IiByeD0iMi41IiBmaWxsPSIjRjVGOEY3Ii8+CjxyZWN0IHg9IjI0IiB5PSIzIiB3aWR0aD0iMTgiIGhlaWdodD0iMSIgcng9IjAuNSIgZmlsbD0iI0Y1RjhGNyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTQ2IDQ5VjU4SDQyLjM4MDlDNDAuMDE1IDYwLjQ2NTMgMzYuNjg2NyA2MiAzMyA2MkMyOS4zMTMzIDYyIDI1Ljk4NSA2MC40NjUzIDIzLjYxOTEgNThIMjBWNDlDMjAgNDEuODIwMyAyNS44MjAzIDM2IDMzIDM2QzQwLjE3OTcgMzYgNDYgNDEuODIwMyA0NiA0OVoiIGZpbGw9IiMwMTU0NEUiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00MiA0OUM0MiA0NC4wMjk0IDM3Ljk3MDYgNDAgMzMgNDBDMjguMDI5NCA0MCAyNCA0NC4wMjk0IDI0IDQ5VjU4SDMzSDQyVjQ5WiIgZmlsbD0iI0Y1RjhGNyIvPgo8cmVjdCB4PSIxNCIgeT0iNTgiIHdpZHRoPSIzOCIgaGVpZ2h0PSIzNCIgcng9IjMiIGZpbGw9IiMwMDg0N0EiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0zNSA3NC4yMzYxQzM1LjYxMzcgNzMuNjg2OCAzNiA3Mi44ODg1IDM2IDcyQzM2IDcwLjM0MzEgMzQuNjU2OSA2OSAzMyA2OUMzMS4zNDMxIDY5IDMwIDcwLjM0MzEgMzAgNzJDMzAgNzIuODg4NSAzMC4zODYzIDczLjY4NjggMzEgNzQuMjM2MVY4MEMzMSA4MS4xMDQ2IDMxLjg5NTQgODIgMzMgODJDMzQuMTA0NiA4MiAzNSA4MS4xMDQ2IDM1IDgwVjc0LjIzNjFaIiBmaWxsPSIjMDE1NDRFIi8+Cjwvc3ZnPgo=";
+export { SvgPhone as ReactComponent };

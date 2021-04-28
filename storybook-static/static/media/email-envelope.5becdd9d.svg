@@ -1,0 +1,60 @@
+var _path, _path2, _rect, _rect2, _rect3, _rect4, _path3, _path4;
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+import * as React from "react";
+
+function SvgEmailEnvelope(props) {
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    width: 95,
+    height: 105,
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), _path || (_path = /*#__PURE__*/React.createElement("path", {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M95 37.5L47.655 0 0 37.5V105h95V37.5z",
+    fill: "#00847A"
+  })), _path2 || (_path2 = /*#__PURE__*/React.createElement("path", {
+    fill: "#00847A",
+    d: "M0 71.25h95V105H0z"
+  })), _rect || (_rect = /*#__PURE__*/React.createElement("rect", {
+    x: 18.506,
+    y: 9.25,
+    width: 57.366,
+    height: 61.5,
+    rx: 4.5,
+    fill: "#F5F8F7",
+    stroke: "#C3C2C2"
+  })), _rect2 || (_rect2 = /*#__PURE__*/React.createElement("rect", {
+    x: 25.457,
+    y: 18.75,
+    width: 43.464,
+    height: 2.5,
+    rx: 1.25,
+    fill: "#C3C2C2"
+  })), _rect3 || (_rect3 = /*#__PURE__*/React.createElement("rect", {
+    x: 25.457,
+    y: 37.5,
+    width: 43.464,
+    height: 2.5,
+    rx: 1.25,
+    fill: "#C3C2C2"
+  })), _rect4 || (_rect4 = /*#__PURE__*/React.createElement("rect", {
+    x: 25.957,
+    y: 24.875,
+    width: 42.464,
+    height: 9,
+    rx: 4.5,
+    stroke: "#C3C2C2"
+  })), _path3 || (_path3 = /*#__PURE__*/React.createElement("path", {
+    d: "M54.02 71.14L95 37.5V105L54.02 71.14zM40.98 71.36L0 105V37.5l40.98 33.86z",
+    fill: "#1CAA9F"
+  })), _path4 || (_path4 = /*#__PURE__*/React.createElement("path", {
+    d: "M31.046 26.875l.557 1.727h1.805l-1.46 1.068.558 1.727-1.46-1.067-1.46 1.068.558-1.728-1.46-1.068h1.804l.558-1.727zM39.118 26.875l.557 1.727h1.805l-1.46 1.068.557 1.727-1.46-1.067-1.46 1.068.558-1.728-1.46-1.068h1.805l.558-1.727zM47.19 26.875l.557 1.727h1.805l-1.46 1.068.557 1.727-1.46-1.067-1.46 1.068.558-1.728-1.46-1.068h1.805l.558-1.727zM55.261 26.875l.558 1.727h1.804l-1.46 1.068.558 1.727-1.46-1.067-1.46 1.068.558-1.728-1.46-1.068h1.805l.557-1.727zM63.333 26.875l.558 1.727h1.804l-1.46 1.068.558 1.727-1.46-1.067-1.46 1.068.558-1.728-1.46-1.068h1.805l.557-1.727z",
+    fill: "#1E1D1D"
+  })));
+}
+
+export default "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTUiIGhlaWdodD0iMTA1IiB2aWV3Qm94PSIwIDAgOTUgMTA1IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTk1IDM3LjVMNDcuNjU0NyAwTDAgMzcuNVYxMDVIOTVWMzcuNVoiIGZpbGw9IiMwMDg0N0EiLz4KPHJlY3QgeT0iNzEuMjUiIHdpZHRoPSI5NSIgaGVpZ2h0PSIzMy43NSIgZmlsbD0iIzAwODQ3QSIvPgo8cmVjdCB4PSIxOC41MDY1IiB5PSI5LjI1IiB3aWR0aD0iNTcuMzY2IiBoZWlnaHQ9IjYxLjUiIHJ4PSI0LjUiIGZpbGw9IiNGNUY4RjciIHN0cm9rZT0iI0MzQzJDMiIvPgo8cmVjdCB4PSIyNS40NTc1IiB5PSIxOC43NSIgd2lkdGg9IjQzLjQ2NDEiIGhlaWdodD0iMi41IiByeD0iMS4yNSIgZmlsbD0iI0MzQzJDMiIvPgo8cmVjdCB4PSIyNS40NTc1IiB5PSIzNy41IiB3aWR0aD0iNDMuNDY0MSIgaGVpZ2h0PSIyLjUiIHJ4PSIxLjI1IiBmaWxsPSIjQzNDMkMyIi8+CjxyZWN0IHg9IjI1Ljk1NzUiIHk9IjI0Ljg3NSIgd2lkdGg9IjQyLjQ2NDEiIGhlaWdodD0iOSIgcng9IjQuNSIgc3Ryb2tlPSIjQzNDMkMyIi8+CjxwYXRoIGQ9Ik01NC4wMTk2IDcxLjE0MDFMOTUgMzcuNVYxMDVMNTQuMDE5NiA3MS4xNDAxWiIgZmlsbD0iIzFDQUE5RiIvPgo8cGF0aCBkPSJNNDAuOTgwNCA3MS4zNTk5TDAgMTA1TDAgMzcuNUw0MC45ODA0IDcxLjM1OTlaIiBmaWxsPSIjMUNBQTlGIi8+CjxwYXRoIGQ9Ik0zMS4wNDU4IDI2Ljg3NUwzMS42MDM0IDI4LjYwMjVIMzMuNDA3OUwzMS45NDggMjkuNjcwMUwzMi41MDU2IDMxLjM5NzVMMzEuMDQ1OCAzMC4zMjk5TDI5LjU4NTkgMzEuMzk3NUwzMC4xNDM1IDI5LjY3MDFMMjguNjgzNyAyOC42MDI1SDMwLjQ4ODFMMzEuMDQ1OCAyNi44NzVaIiBmaWxsPSIjMUUxRDFEIi8+CjxwYXRoIGQ9Ik0zOS4xMTc2IDI2Ljg3NUwzOS42NzUzIDI4LjYwMjVINDEuNDc5N0w0MC4wMTk5IDI5LjY3MDFMNDAuNTc3NSAzMS4zOTc1TDM5LjExNzYgMzAuMzI5OUwzNy42NTc4IDMxLjM5NzVMMzguMjE1NCAyOS42NzAxTDM2Ljc1NTUgMjguNjAyNUgzOC41NkwzOS4xMTc2IDI2Ljg3NVoiIGZpbGw9IiMxRTFEMUQiLz4KPHBhdGggZD0iTTQ3LjE4OTUgMjYuODc1TDQ3Ljc0NzIgMjguNjAyNUg0OS41NTE2TDQ4LjA5MTggMjkuNjcwMUw0OC42NDk0IDMxLjM5NzVMNDcuMTg5NSAzMC4zMjk5TDQ1LjcyOTcgMzEuMzk3NUw0Ni4yODczIDI5LjY3MDFMNDQuODI3NCAyOC42MDI1SDQ2LjYzMTlMNDcuMTg5NSAyNi44NzVaIiBmaWxsPSIjMUUxRDFEIi8+CjxwYXRoIGQ9Ik01NS4yNjE0IDI2Ljg3NUw1NS44MTkxIDI4LjYwMjVINTcuNjIzNUw1Ni4xNjM3IDI5LjY3MDFMNTYuNzIxMyAzMS4zOTc1TDU1LjI2MTQgMzAuMzI5OUw1My44MDE2IDMxLjM5NzVMNTQuMzU5MiAyOS42NzAxTDUyLjg5OTMgMjguNjAyNUg1NC43MDM4TDU1LjI2MTQgMjYuODc1WiIgZmlsbD0iIzFFMUQxRCIvPgo8cGF0aCBkPSJNNjMuMzMzMyAyNi44NzVMNjMuODkxIDI4LjYwMjVINjUuNjk1NEw2NC4yMzU2IDI5LjY3MDFMNjQuNzkzMiAzMS4zOTc1TDYzLjMzMzMgMzAuMzI5OUw2MS44NzM1IDMxLjM5NzVMNjIuNDMxMSAyOS42NzAxTDYwLjk3MTIgMjguNjAyNUg2Mi43NzU3TDYzLjMzMzMgMjYuODc1WiIgZmlsbD0iIzFFMUQxRCIvPgo8L3N2Zz4K";
+export { SvgEmailEnvelope as ReactComponent };
