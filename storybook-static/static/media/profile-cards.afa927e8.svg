@@ -1,0 +1,68 @@
+var _g, _path, _defs;
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+import * as React from "react";
+
+function SvgProfileCards(props) {
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    width: 78,
+    height: 78,
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), _g || (_g = /*#__PURE__*/React.createElement("g", {
+    filter: "url(#profile-cards_svg__filter4_d)"
+  }, /*#__PURE__*/React.createElement("rect", {
+    x: 8,
+    y: 4,
+    width: 62,
+    height: 62,
+    rx: 13,
+    fill: "url(#profile-cards_svg__paint4_linear)"
+  }))), _path || (_path = /*#__PURE__*/React.createElement("path", {
+    d: "M24 22.99a1.5 1.5 0 011.488-1.49h27.024c.822 0 1.488.668 1.488 1.49v24.02a1.5 1.5 0 01-1.488 1.49H25.488A1.49 1.49 0 0124 47.01V22.99zm3 1.51v21h24v-21H27zm3 3h9v9h-9v-9zm3 3v3h3v-3h-3zm-3 9h18v3H30v-3zm12-12h6v3h-6v-3zm0 6h6v3h-6v-3z",
+    fill: "#F5F8F7"
+  })), _defs || (_defs = /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("linearGradient", {
+    id: "profile-cards_svg__paint4_linear",
+    x1: 39.689,
+    y1: 4,
+    x2: 39.689,
+    y2: 66,
+    gradientUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React.createElement("stop", {
+    stopColor: "#2BD891"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: 1,
+    stopColor: "#0D7B4E"
+  })), /*#__PURE__*/React.createElement("filter", {
+    id: "profile-cards_svg__filter4_d",
+    x: 0,
+    y: 0,
+    width: 78,
+    height: 78,
+    filterUnits: "userSpaceOnUse",
+    colorInterpolationFilters: "sRGB"
+  }, /*#__PURE__*/React.createElement("feFlood", {
+    floodOpacity: 0,
+    result: "BackgroundImageFix"
+  }), /*#__PURE__*/React.createElement("feColorMatrix", {
+    in: "SourceAlpha",
+    values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+  }), /*#__PURE__*/React.createElement("feOffset", {
+    dy: 4
+  }), /*#__PURE__*/React.createElement("feGaussianBlur", {
+    stdDeviation: 4
+  }), /*#__PURE__*/React.createElement("feColorMatrix", {
+    values: "0 0 0 0 0.356863 0 0 0 0 0.360784 0 0 0 0 0.356863 0 0 0 0.35 0"
+  }), /*#__PURE__*/React.createElement("feBlend", {
+    in2: "BackgroundImageFix",
+    result: "effect1_dropShadow"
+  }), /*#__PURE__*/React.createElement("feBlend", {
+    in: "SourceGraphic",
+    in2: "effect1_dropShadow",
+    result: "shape"
+  })))));
+}
+
+export default "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzgiIGhlaWdodD0iNzgiIHZpZXdCb3g9IjAgMCA3OCA3OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgZmlsdGVyPSJ1cmwoI2ZpbHRlcjRfZCkiPgo8cmVjdCB4PSI4IiB5PSI0IiB3aWR0aD0iNjIiIGhlaWdodD0iNjIiIHJ4PSIxMyIgZmlsbD0idXJsKCNwYWludDRfbGluZWFyKSIvPgo8L2c+CjxwYXRoIGQ9Ik0yNCAyMi45ODk1QzI0LjAwMjcgMjIuNTk1NiAyNC4xNjA0IDIyLjIxODUgMjQuNDM4OCAyMS45Mzk4QzI0LjcxNzIgMjEuNjYxMSAyNS4wOTQxIDIxLjUwMzEgMjUuNDg4IDIxLjVINTIuNTEyQzUzLjMzNCAyMS41IDU0IDIyLjE2NzUgNTQgMjIuOTg5NVY0Ny4wMTA1QzUzLjk5NzMgNDcuNDA0NCA1My44Mzk2IDQ3Ljc4MTUgNTMuNTYxMiA0OC4wNjAyQzUzLjI4MjggNDguMzM4OSA1Mi45MDU5IDQ4LjQ5NjkgNTIuNTEyIDQ4LjVIMjUuNDg4QzI1LjA5MzIgNDguNDk5NiAyNC43MTQ3IDQ4LjM0MjUgMjQuNDM1NyA0OC4wNjMyQzI0LjE1NjcgNDcuNzgzOSAyNCA0Ny40MDUzIDI0IDQ3LjAxMDVWMjIuOTg5NVpNMjcgMjQuNVY0NS41SDUxVjI0LjVIMjdaTTMwIDI3LjVIMzlWMzYuNUgzMFYyNy41Wk0zMyAzMC41VjMzLjVIMzZWMzAuNUgzM1pNMzAgMzkuNUg0OFY0Mi41SDMwVjM5LjVaTTQyIDI3LjVINDhWMzAuNUg0MlYyNy41Wk00MiAzMy41SDQ4VjM2LjVINDJWMzMuNVoiIGZpbGw9IiNGNUY4RjciLz4KPGRlZnM+CjxmaWx0ZXIgaWQ9ImZpbHRlcjRfZCIgeD0iMCIgeT0iMCIgd2lkdGg9Ijc4IiBoZWlnaHQ9Ijc4IiBmaWx0ZXJVbml0cz0idXNlclNwYWNlT25Vc2UiIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0ic1JHQiI+CjxmZUZsb29kIGZsb29kLW9wYWNpdHk9IjAiIHJlc3VsdD0iQmFja2dyb3VuZEltYWdlRml4Ii8+CjxmZUNvbG9yTWF0cml4IGluPSJTb3VyY2VBbHBoYSIgdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDEyNyAwIi8+CjxmZU9mZnNldCBkeT0iNCIvPgo8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSI0Ii8+CjxmZUNvbG9yTWF0cml4IHR5cGU9Im1hdHJpeCIgdmFsdWVzPSIwIDAgMCAwIDAuMzU2ODYzIDAgMCAwIDAgMC4zNjA3ODQgMCAwIDAgMCAwLjM1Njg2MyAwIDAgMCAwLjM1IDAiLz4KPGZlQmxlbmQgbW9kZT0ibm9ybWFsIiBpbjI9IkJhY2tncm91bmRJbWFnZUZpeCIgcmVzdWx0PSJlZmZlY3QxX2Ryb3BTaGFkb3ciLz4KPGZlQmxlbmQgbW9kZT0ibm9ybWFsIiBpbj0iU291cmNlR3JhcGhpYyIgaW4yPSJlZmZlY3QxX2Ryb3BTaGFkb3ciIHJlc3VsdD0ic2hhcGUiLz4KPC9maWx0ZXI+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQ0X2xpbmVhciIgeDE9IjM5LjY4ODkiIHkxPSI0IiB4Mj0iMzkuNjg4OSIgeTI9IjY2IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiMyQkQ4OTEiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMEQ3QjRFIi8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPC9zdmc+Cg==";
+export { SvgProfileCards as ReactComponent };
