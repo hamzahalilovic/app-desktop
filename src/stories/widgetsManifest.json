@@ -1,0 +1,102 @@
+{
+  "weatherWidget": {
+    "title": "Weather Widget",
+    "author": "Prifina Inc",
+    "description": "weather widget description",
+
+    "icon": {
+      "src": "assets/weatherWidgetIcon.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "png"
+    },
+    "settings": [{ "field": "city", "value": "New York" }],
+    "name": "weatherWidget",
+    "backgroundColor": "white",
+    "shortDescription": "What makes a good nights sleep? What movie gives you the best ZZZs? This Sleep Quality widget compares your daily streaming activities and their impact on your sleep. hey",
+    "dataTypes": "User-held data",
+    "category": "Health",
+    "deviceSupport": "Desktop browser",
+    "languages": "EN",
+    "age": "10+",
+    "screenshots": [
+      {
+        "src": "screenshot1.webp",
+        "sizes": "1280x720",
+        "type": "image/webp"
+      },
+      {
+        "src": "screenshot2.webp",
+        "sizes": "1280x720",
+        "type": "image/webp"
+      }
+    ],
+    "fullDescription": "",
+    "keyFeatures": ""
+  },
+  "clockWidget": {
+    "title": "Clock Widget",
+    "author": "Prifina Inc",
+    "description": "weather widget description",
+    "icon": {
+      "src": "./assets/weatherWidgetIcon.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    "settings": [{ "field": "city", "value": "New York" }],
+    "name": "clockWidget",
+    "backgroundColor": "white",
+    "shortDescription": "What makes a good nights sleep? What movie gives you the best ZZZs? This Sleep Quality widget compares your daily streaming activities and their impact on your sleep.",
+    "dataTypes": "User-held data",
+    "category": "Health",
+    "deviceSupport": "Desktop browser",
+    "languages": "EN",
+    "age": "10+",
+    "screenshots": [
+      {
+        "src": "screenshot1.webp",
+        "sizes": "1280x720",
+        "type": "image/webp"
+      },
+      {
+        "src": "screenshot2.webp",
+        "sizes": "1280x720",
+        "type": "image/webp"
+      }
+    ],
+    "fullDescription": "",
+    "keyFeatures": ""
+  },
+  "helloWidget": {
+    "title": "Hello Widget",
+    "author": "Prifina Inc",
+    "description": "weather widget description",
+    "icon": {
+      "src": "./assets/weatherWidgetIcon.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    "settings": [{ "field": "city", "value": "New York" }],
+    "name": "weatherWidget",
+    "backgroundColor": "white",
+    "shortDescription": "What makes a good nights sleep? What movie gives you the best ZZZs? This Sleep Quality widget compares your daily streaming activities and their impact on your sleep. ola",
+    "dataTypes": "User-held data",
+    "category": "Health",
+    "deviceSupport": "Desktop browser",
+    "languages": "EN",
+    "age": "10+",
+    "screenshots": [
+      {
+        "src": "screenshot1.webp",
+        "sizes": "1280x720",
+        "type": "image/webp"
+      },
+      {
+        "src": "screenshot2.webp",
+        "sizes": "1280x720",
+        "type": "image/webp"
+      }
+    ],
+    "fullDescription": "",
+    "keyFeatures": ""
+  }
+}
