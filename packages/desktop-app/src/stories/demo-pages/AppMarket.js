@@ -1005,7 +1005,7 @@ const AppMarket = ({ GraphQLClient, prifinaID, ...props }) => {
                       width="44px"
                       borderRadius="8.8px"
                       bg="grey"
-                    ></Box>
+                    />
                   </Flex>
                 </Flex>
               </Flex>
