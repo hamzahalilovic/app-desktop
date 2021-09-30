@@ -20,9 +20,17 @@ import { PrifinaLogo } from "../../components/PrifinaLogo";
 
 import { ReactComponent as DefaultWidget } from "../../assets/third-party-app.svg";
 
+//data requirements page
+
+import healthData from "../assets/app-market/health-data.png";
+import viewingData from "../assets/app-market/viewing-data.png";
+
 import bxsCheckCircle from "@iconify/icons-bx/bxs-check-circle";
 import bxsXCircle from "@iconify/icons-bx/bxs-x-circle";
 import lefArrow from "@iconify/icons-bx/bxs-chevron-left";
+
+import backgroundImage from "../assets/app-market/background-image.png";
+import appMarketBanner from "../assets/app-market/app-market-banner.png";
 
 //import { ReactComponent as PrifinaLogoImage } from "../assets/prifina.svg";
 
@@ -490,46 +498,89 @@ const AppMarket = ({ GraphQLClient, prifinaID, ...props }) => {
       {step === 0 && (
         <>
           <GlobalStyle />
-          <PrifinaLogo className={"app-market"} />
-          <Box mt={"40px"} ml={"64px"}>
-            <TitleText textStyle={"h4"}>Recommended for you</TitleText>
-            <Flex mt={"24px"} flexDirection={"row"} flexWrap="wrap">
-              {Object.keys(widgets.current).map(w => {
-                return (
-                  <WidgetBox
-                    key={w}
-                    id={w}
-                    {...widgets.current[w]}
-                    installWidget={installWidget}
-                    installedWidget={installedWidgets.indexOf(w)}
-                    onClick={() => {
-                      setStep(1);
-                      setAllValues({
-                        ...allValues,
-                        title: widgets.current[w].title,
-                        publisher: widgets.current[w].publisher,
-                        icon: widgets.current[w].icon,
-                        bannerImage: widgets.current[w].bannerImage,
-                        description: widgets.current[w].description,
-                        shortDescription: widgets.current[w].shortDescription,
-                        longDescription: widgets.current[w].longDescription,
-                        dataTypes: widgets.current[w].dataTypes,
-                        category: widgets.current[w].category,
-                        deviceSupport: widgets.current[w].deviceSupport,
-                        languages: widgets.current[w].languages,
-                        age: widgets.current[w].age,
-                        screenshots: widgets.current[w].screenshots,
-                        keyFeatures: widgets.current[w].keyFeatures,
-                        userHeld: widgets.current[w].userHeld,
-                        userGenerated: widgets.current[w].userGenerated,
-                        public: widgets.current[w].public,
-                      });
-                    }}
-                  />
-                );
-              })}
+          <Navbar />
+          <UserMenu />
+          <Flex
+            width="100%"
+            height="100%"
+            paddingLeft="286px"
+            bg="white"
+            flexDirection="column"
+            alignItems="center"
+          >
+            <Flex
+              height="316px"
+              bg="#EBF3FF"
+              width="100%"
+              justifyContent="space-between"
+              paddingLeft="40px"
+              paddingRight="40px"
+              paddingTop="32px"
+              paddingBottom="32px"
+            >
+              <Flex
+                flexDirection="column"
+                marginRight="143px"
+                paddingTop="62px"
+              >
+                <Text fontSize="28px" color="#639AED" marginBottom="24px">
+                  Data on your side
+                </Text>
+                <Text fontSize="16px" color="#639AED">
+                  Free your data from its silos and utilize it in different apps
+                  and widgets. Like a key, your data can unlock valuable
+                  experiences and insights. By using your data directly, you
+                  capture the value and open a new market of apps.
+                </Text>
+              </Flex>
+              <Image src={appMarketBanner} />
             </Flex>
-          </Box>
+
+            <Box mt={"40px"} ml={"64px"}>
+              <TitleText textStyle={"h4"}>Category</TitleText>
+              <Text textStyle={"h6"}>
+                This section features all the widgets which require user-held
+                data
+              </Text>
+              <Flex mt={"24px"} flexDirection={"row"} flexWrap="wrap">
+                {Object.keys(widgets.current).map(w => {
+                  console.log("HEEEEE", widgets.current);
+                  return (
+                    <WidgetBox
+                      key={w}
+                      id={w}
+                      {...widgets.current[w]}
+                      installWidget={installWidget}
+                      installedWidget={installedWidgets.indexOf(w)}
+                      onClick={() => {
+                        setStep(1);
+                        setAllValues({
+                          ...allValues,
+                          title: widgets.current[w].title,
+                          publisher: widgets.current[w].publisher,
+                          icon: widgets.current[w].icon,
+                          bannerImage: widgets.current[w].bannerImage,
+                          description: widgets.current[w].description,
+                          shortDescription: widgets.current[w].shortDescription,
+                          longDescription: widgets.current[w].longDescription,
+                          dataTypes: widgets.current[w].dataTypes,
+                          category: widgets.current[w].category,
+                          deviceSupport: widgets.current[w].deviceSupport,
+                          languages: widgets.current[w].languages,
+                          age: widgets.current[w].age,
+                          screenshots: widgets.current[w].screenshots,
+                          keyFeatures: widgets.current[w].keyFeatures,
+                          userHeld: widgets.current[w].userHeld,
+                          userGenerated: widgets.current[w].userGenerated,
+                          public: widgets.current[w].public,
+                        });
+                      }}
+                    />
+                  );
+                })}
+              </Flex>
+            </Box>
+          </Flex>
         </>
       )}
       {step === 1 && (
@@ -559,13 +610,13 @@ const AppMarket = ({ GraphQLClient, prifinaID, ...props }) => {
                 Widgets Directory
               </TextButton>
             </Flex>
-            <Box width="1154px" height="316px" bg="gray" />
-            {/* <Image
-              src={allValues.bannerImage}
+            <Image
+              //   src={allValues.bannerImage}
+              src={backgroundImage}
               alt={"Image"}
               shape={"square"}
               style={{ filter: "blur(1.5px)" }}
-            /> */}
+            />
             <Flex
               alt="innerContainer"
               marginTop={-120}
@@ -754,7 +805,8 @@ const AppMarket = ({ GraphQLClient, prifinaID, ...props }) => {
               </TextButton>
             </Flex>
             <Image
-              src={allValues.bannerImage}
+              //   src={allValues.bannerImage}
+              src={backgroundImage}
               alt={"Image"}
               shape={"square"}
               style={{ filter: "blur(1.5px)" }}
