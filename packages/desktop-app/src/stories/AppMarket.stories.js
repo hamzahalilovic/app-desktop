@@ -289,7 +289,3 @@ export const defaultSSOApp = props => {
 defaultSSOApp.story = {
   name: "App Market",
 };
-
-defaultSSOApp.story = {
-  name: "SSO App",
-};

@@ -14,7 +14,7 @@ import PropTypes from "prop-types";
 import styled, { createGlobalStyle } from "styled-components";
 
 import { BlendIcon } from "@blend-ui/icons";
-import { Box, Flex, Text, Button, Image } from "@blend-ui/core";
+import { Box, Flex, Text, Button, Image, Divider } from "@blend-ui/core";
 
 import { PrifinaLogo } from "../../components/PrifinaLogo";
 
@@ -411,6 +411,80 @@ const AppMarket = ({ GraphQLClient, prifinaID, ...props }) => {
     default:
   }
 
+  function userHeldData() {
+    const newData = allValues.userHeld.map(item => {
+      return (
+        <Flex alignItems="center">
+          <BlendIcon iconify={bxsCheckCircle} color={"#066FE1"} size="16px" />
+          <Text fontSize="14px" color="#066FE1" marginLeft="8px">
+            {item}
+          </Text>
+        </Flex>
+      );
+    });
+    if (newData.length > 0) {
+      return <Flex flexDirection="column"> {newData}</Flex>;
+    } else {
+      return (
+        <Flex alignItems="center">
+          <BlendIcon iconify={bxsXCircle} color={"#ADADAD"} size="16px" />
+          <Text marginLeft="8px" color="#969595" fontSize="14px">
+            None needed
+          </Text>
+        </Flex>
+      );
+    }
+  }
+
+  function userGeneratedData() {
+    const newData = allValues.userGenerated.map(item => {
+      return (
+        <Flex alignItems="center">
+          <BlendIcon iconify={bxsCheckCircle} color={"#066FE1"} size="16px" />
+          <Text fontSize="14px" color="#066FE1" marginLeft="8px">
+            {item}
+          </Text>
+        </Flex>
+      );
+    });
+    if (newData.length > 0) {
+      return <Flex flexDirection="column"> {newData}</Flex>;
+    } else {
+      return (
+        <Flex alignItems="center">
+          <BlendIcon iconify={bxsXCircle} color={"#ADADAD"} size="16px" />
+          <Text marginLeft="8px" color="#969595" fontSize="14px">
+            None needed
+          </Text>
+        </Flex>
+      );
+    }
+  }
+  function publicData() {
+    const newData = allValues.public.map(item => {
+      return (
+        <Flex alignItems="center">
+          <BlendIcon iconify={bxsCheckCircle} color={"#066FE1"} size="16px" />
+          <Text fontSize="14px" color="#066FE1" marginLeft="8px">
+            {item}
+          </Text>
+        </Flex>
+      );
+    });
+    if (newData.length > 0) {
+      return <Flex flexDirection="column"> {newData}</Flex>;
+    } else {
+      return (
+        <Flex alignItems="center">
+          <BlendIcon iconify={bxsXCircle} color={"#ADADAD"} size="16px" />
+          <Text marginLeft="8px" color="#969595" fontSize="14px">
+            None needed
+          </Text>
+        </Flex>
+      );
+    }
+  }
+
   return (
     <>
       {step === 0 && (
@@ -485,12 +559,13 @@ const AppMarket = ({ GraphQLClient, prifinaID, ...props }) => {
                 Widgets Directory
               </TextButton>
             </Flex>
-            <Image
+            <Box width="1154px" height="316px" bg="gray" />
+            {/* <Image
               src={allValues.bannerImage}
               alt={"Image"}
               shape={"square"}
               style={{ filter: "blur(1.5px)" }}
-            />
+            /> */}
             <Flex
               alt="innerContainer"
               marginTop={-120}
@@ -637,6 +712,249 @@ const AppMarket = ({ GraphQLClient, prifinaID, ...props }) => {
                       </Box>
                     );
                   })}
+                </Flex>
+              </Flex>
+            </Flex>
+          </Flex>
+        </>
+      )}
+      {step === 2 && (
+        <>
+          <Navbar />
+          <UserMenu
+          // children={
+          //   <ul>
+          //     <div>Market</div>
+          //     <div>Applications</div>
+          //     <div>Widgets</div>
+          //   </ul>
+          // }
+          />
+          <Flex
+            width="100%"
+            height="100%"
+            paddingLeft="286px"
+            bg="white"
+            flexDirection="column"
+            alignItems="center"
+          >
+            <Flex
+              width="100%"
+              height="71px"
+              alignItems="center"
+              paddingLeft="64px"
+            >
+              <TextButton
+                onClick={() => {
+                  setStep(0);
+                }}
+              >
+                <BlendIcon iconify={lefArrow} size="12px" />
+                Widgets Directory
+              </TextButton>
+            </Flex>
+            <Image
+              src={allValues.bannerImage}
+              alt={"Image"}
+              shape={"square"}
+              style={{ filter: "blur(1.5px)" }}
+            />
+            <Flex
+              alt="innerContainer"
+              marginTop={-120}
+              borderRadius="8px"
+              minWidth="1026px"
+              bg="white"
+              boxShadow="0px 0px 16px rgba(74, 77, 79, 0.25)"
+              flexDirection="column"
+              marginBottom="82px"
+              marginLeft="64px"
+              marginRight="64px"
+              paddingLeft="40px"
+              paddingRight="40px"
+              paddingBottom="30px"
+              zIndex={0}
+            >
+              <Flex
+                alt="topContainer"
+                justifyContent="space-between"
+                alignItems="center"
+                width="100%"
+                // minHeight="88px"
+                paddingTop="32px"
+                paddingBottom="24px"
+                // marginBottom="20px"
+              >
+                <Flex alt="leftSide" alignItems="center">
+                  <Image
+                    src={allValues.icon}
+                    alt={"Image"}
+                    shape={"square"}
+                    width={57}
+                  />
+                  <Flex flexDirection="column" marginLeft="16px">
+                    <Flex alignItems="center">
+                      <Text fontSize="24px" bold marginRight="24px">
+                        {allValues.title}
+                      </Text>
+                      <Badge>Widget</Badge>
+                    </Flex>
+                    <Flex paddingTop="8px">
+                      <Text marginRight="18px" color="#969595" fontSize="12px">
+                        {allValues.publisher}
+                      </Text>
+                      <Text color="#969595" fontSize="12px">
+                        {allValues.category}
+                      </Text>
+                    </Flex>
+                  </Flex>
+                </Flex>
+                <Flex alt="rightSide">
+                  <OutlineButton variation="outline">Report bug</OutlineButton>
+                  <OutlineButton variation="outline" marginLeft="16px">
+                    Support
+                  </OutlineButton>
+                  <Button disabled marginLeft="16px">
+                    Install
+                  </Button>
+                </Flex>
+              </Flex>
+              {/* temporary */}
+              {/* <Flex
+                bg="#FFF8E0"
+                justifyContent="space-between"
+                paddingTop="28px"
+                paddingBottom="28px"
+                paddingLeft="17"
+                paddingRight="28px"
+              >
+                <Text color="#E8B607">
+                  This widget requires health and viewing data to operate
+                </Text>
+                <Text color="#E8B607">Connect Data</Text>
+              </Flex> */}
+              <Flex alt="buttons" marginBottom="38px">
+                <UnderlineButton
+                  style={{
+                    color: "#ADADAD",
+                    borderBottom: "2px solid #ADADAD",
+                  }}
+                  onClick={() => {
+                    setStep(1);
+                  }}
+                >
+                  Widget Details
+                </UnderlineButton>
+                <UnderlineButton
+                  onClick={() => {
+                    setStep(2);
+                  }}
+                >
+                  Data requirements
+                </UnderlineButton>
+              </Flex>
+              <Flex
+                alt="dataRequirements"
+                paddingLeft="7px"
+                paddingRight="20px"
+                marginBottom="25px"
+                justifyContent="space-between"
+              >
+                <Flex alt="leftSide" flexDirection="column" width="480px">
+                  <Flex alignItems="center" marginBottom="13px">
+                    <Text marginRight="24px" fontSize="18px">
+                      Data Requirements
+                    </Text>
+                    {/* temproray */}
+                    <Box
+                      width="117px"
+                      height="30px"
+                      bg="#B2F5EA"
+                      textAlign="center"
+                      lineHeight="30px"
+                      fontSize="10px"
+                      color="#00A3C4"
+                    >
+                      User Held
+                    </Box>
+                  </Flex>
+                  <Text fontSize="14px" color="#969595">
+                    Some products on Prifina are powered by ‘user-held’ data
+                    which they pull from your data cloud, if the data is not
+                    available in your cloud they can’t run. Select from sources
+                    below to add the data
+                  </Text>
+                  <Flex
+                    justifyContent="space-between"
+                    paddingTop="32px"
+                    paddingBottom="31px"
+                  >
+                    <Flex flexDirection="column">
+                      <Text fontSize="14px" bold marginBottom="16px">
+                        User-held
+                      </Text>
+                      {userHeldData()}
+                    </Flex>
+                    <Flex flexDirection="column">
+                      <Text fontSize="14px" bold marginBottom="16px">
+                        User-generated
+                      </Text>
+                      {userGeneratedData()}
+                    </Flex>
+                    <Flex flexDirection="column">
+                      <Text fontSize="14px" bold marginBottom="16px">
+                        Public
+                      </Text>
+                      {publicData()}
+                    </Flex>
+                  </Flex>
+                </Flex>
+                <Flex alt="rightSide">
+                  <Image
+                    src={allValues.dataConnectionsImage}
+                    style={{
+                      width: "284px",
+                      height: "213px",
+                    }}
+                  />
+                </Flex>
+              </Flex>
+
+              <Divider as={"div"} color="#F2F4F5" height={"1px"} />
+              <Flex alt="addData" paddingTop="32px" paddingBottom="40px">
+                <Flex flexDirection="column" marginRight="190px">
+                  <Flex paddingBottom="8px">
+                    <Image src={healthData} alt={"Image"} shape={"square"} />
+                    <Text marginLeft="8px">Add health data to your cloud</Text>
+                  </Flex>
+                  <Text color="#969595">
+                    Select from available sources to add
+                  </Text>
+                  <Flex paddingTop="31px">
+                    <Box
+                      height="44px"
+                      width="44px"
+                      borderRadius="8.8px"
+                      bg="grey"
+                    />
+                  </Flex>
+                </Flex>
+                <Flex flexDirection="column">
+                  <Flex paddingBottom="8px">
+                    <Image src={viewingData} alt={"Image"} shape={"square"} />
+                    <Text marginLeft="8px">Add viewing data to your cloud</Text>
+                  </Flex>
+                  <Text color="#969595">
+                    Select from available sources to add
+                  </Text>
+                  <Flex paddingTop="31px">
+                    <Box
+                      height="44px"
+                      width="44px"
+                      borderRadius="8.8px"
+                      bg="grey"
+                    ></Box>
+                  </Flex>
                 </Flex>
               </Flex>
             </Flex>
