@@ -29,8 +29,9 @@ import bxsCheckCircle from "@iconify/icons-bx/bxs-check-circle";
 import bxsXCircle from "@iconify/icons-bx/bxs-x-circle";
 import lefArrow from "@iconify/icons-bx/bxs-chevron-left";
 
-import backgroundImage from "../assets/app-market/background-image.png";
 import appMarketBanner from "../assets/app-market/app-market-banner.png";
+
+import apiDataImg from "../assets/app-market/api-data.png";
 
 //import { ReactComponent as PrifinaLogoImage } from "../assets/prifina.svg";
 
@@ -270,6 +271,8 @@ const AppMarket = ({ GraphQLClient, prifinaID, ...props }) => {
   const widgets = useRef({});
   const [installedWidgets, setInstalledWidgets] = useState([]);
 
+  const s3path = "https://prifina-apps-352681697435.s3.amazonaws.com";
+
   useEffect(() => {
     listAppMarketQuery(GraphQLClient, { filter: { appType: { lt: 3 } } }).then(
       res => {
@@ -323,8 +326,8 @@ const AppMarket = ({ GraphQLClient, prifinaID, ...props }) => {
             installed: false,
             settings: defaultSettings,
             publisher: manifest.publisher,
-            icon: manifest.icon,
-            bannerImage: manifest.bannerImage,
+            icon: `${s3path}/${manifest.id}/${manifest.icon}`,
+            bannerImage: `${s3path}/${manifest.id}/${manifest.bannerImage}`,
             description: manifest.description,
             shortDescription: manifest.shortDescription,
             longDescription: manifest.longDescription,
@@ -338,9 +341,14 @@ const AppMarket = ({ GraphQLClient, prifinaID, ...props }) => {
             userHeld: manifest.userHeld,
             userGenerated: manifest.userGenerated,
             public: manifest.public,
+            id: manifest.id,
           };
 
           console.log("MANIFEST HEHE", manifest);
+          const screenshots = [
+            `${s3path}/${manifest.id}/${manifest.screenshots}`,
+          ];
+          console.log("sreenshots", screenshots);
         });
 
         console.log("AVAILABLE WIDGETS ", availableWidgets);
@@ -573,6 +581,7 @@ const AppMarket = ({ GraphQLClient, prifinaID, ...props }) => {
                           userHeld: widgets.current[w].userHeld,
                           userGenerated: widgets.current[w].userGenerated,
                           public: widgets.current[w].public,
+                          id: widgets.current[w].id,
                         });
                       }}
                     />
@@ -611,8 +620,8 @@ const AppMarket = ({ GraphQLClient, prifinaID, ...props }) => {
               </TextButton>
             </Flex>
             <Image
-              //   src={allValues.bannerImage}
-              src={backgroundImage}
+              src={allValues.bannerImage}
+              // src={backgroundImage}
               alt={"Image"}
               shape={"square"}
               style={{ filter: "blur(1.5px)" }}
@@ -759,7 +768,10 @@ const AppMarket = ({ GraphQLClient, prifinaID, ...props }) => {
                   {allValues.screenshots.map((item, index) => {
                     return (
                       <Box width="284px" height="213px" marginBottom="16px">
-                        <Image key={index} src={item} />
+                        <Image
+                          key={index}
+                          src={`${s3path}/${allValues.id}/${item}`}
+                        />
                       </Box>
                     );
                   })}
@@ -805,8 +817,7 @@ const AppMarket = ({ GraphQLClient, prifinaID, ...props }) => {
               </TextButton>
             </Flex>
             <Image
-              //   src={allValues.bannerImage}
-              src={backgroundImage}
+              src={allValues.bannerImage}
               alt={"Image"}
               shape={"square"}
               style={{ filter: "blur(1.5px)" }}
@@ -963,7 +974,8 @@ const AppMarket = ({ GraphQLClient, prifinaID, ...props }) => {
                 </Flex>
                 <Flex alt="rightSide">
                   <Image
-                    src={allValues.dataConnectionsImage}
+                    //this needs further imporvement
+                    src={apiDataImg}
                     style={{
                       width: "284px",
                       height: "213px",

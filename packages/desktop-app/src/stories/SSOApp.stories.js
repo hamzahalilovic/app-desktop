@@ -1,5 +1,3 @@
-// SSO App
-
 /* eslint-disable react/display-name */
 /* eslint-disable react/no-multi-comp */
 //import HmacSHA1 from "crypto-js/hmac-sha1";
@@ -19,7 +17,7 @@ import {
   useFormFields,
 } from "@prifina-apps/utils";
 
-import { default as DefaultApp } from "../pages/AppMarket";
+//import { default as DefaultApp } from "../pages/AppMarket";
 
 const APIConfig = {
   aws_appsync_graphqlEndpoint: config.appSync.aws_appsync_graphqlEndpoint,
@@ -62,14 +60,11 @@ export const defaultSSOApp = props => {
   });
 
   const refreshSession = useRef(false);
-  const { userAuth } = useAppContext();
 
   Auth.configure(AUTHConfig);
   Amplify.configure(APIConfig);
   Amplify.configure(S3Config);
   console.log("AUTH CONFIG ", AUTHConfig);
-
-  const appDebug = true;
 
   const createClient = (endpoint, region) => {
     const client = new AWSAppSyncClient({
@@ -89,70 +84,6 @@ export const defaultSSOApp = props => {
       disableOffline: true,
     });
     return client;
-  };
-
-  const loginClick = async () => {
-    // setInvalidLogin(0);
-    try {
-      //this.setState({loading: true, disabled: true});
-      let user = await Auth.signIn(loginFields.username, loginFields.password);
-      console.log("LOGIN", user);
-      /*
-      localStorage.setItem(
-        "LastSessionIdentityPool",
-        "us-east-1:37a1a326-618e-4e3f-bf8f-a0bbd06a25b3",
-      );
-      */
-      /*
-      let currentConfig = Auth._config;
-      console.log("AUTH CONFIG ", currentConfig);
-      currentConfig.identityPoolId =
-        "us-east-1:37a1a326-618e-4e3f-bf8f-a0bbd06a25b3";
-      Auth.configure(currentConfig);
-      const _currentSession = await Auth.currentSession();
-      console.log("LOGIN SESSION ", _currentSession);
-      */
-      //setAuthOptions({ user: user, Auth: Auth, setAuth: userAuth });
-      //setConfirmCode(true);
-      if (appDebug && user.preferredMFA === "NOMFA") {
-        userAuth(true);
-        setLogin(true);
-        // history.replace("/home");
-      } else {
-        if (user.preferredMFA === "NOMFA") {
-          const mfa = await Auth.setPreferredMFA(user, "SMS");
-          console.log("MFA ", mfa);
-          user = await Auth.signIn(loginFields.username, loginFields.password);
-          console.log("LOGIN2", user);
-        } else if (user.challengeName === "SMS_MFA") {
-          //normal login...
-          //setAuthOptions({ user: user, Auth: Auth, setAuth: userAuth });
-        }
-        // alerts.info(i18n.__("confirmationCodeSent"), {});
-        // setAuthOptions({ user: user, Auth: Auth, setAuth: userAuth });
-        // setConfirmCode(true);
-      }
-      //userAuth(true);
-      //history.replace("/home");
-      //authOptions.setAuth(true);
-      //preferredMFA: "NOMFA"
-      //challengeName: "SMS_MFA"
-      /*
-      challengeParam:
-CODE_DELIVERY_DELIVERY_MEDIUM: "SMS"
-CODE_DELIVERY_DESTINATION: "+********7102"
-*/
-    } catch (e) {
-      console.log("ERR", e);
-      if (
-        e.code === "NotAuthorizedException" ||
-        e.code === "UserNotFoundException"
-      ) {
-        // alerts.error(i18n.__("invalidLogin"), {});
-        // setInvalidLogin(2);
-        // setInputUsernameFocus();
-      }
-    }
   };
 
   // get user auth...
@@ -300,7 +231,6 @@ CODE_DELIVERY_DESTINATION: "+********7102"
 
           clientHandler.current = createClient(clientEndpoint, clientRegion);
           console.log("ALL GOOD....");
-
           setSettingsReady(true);
         }
         //setLogin(false);
@@ -327,37 +257,30 @@ CODE_DELIVERY_DESTINATION: "+********7102"
           </div>
           <div>
             <button
-              // onClick={e => {
-              //   //console.log(loginFields);
-              //   Auth.signIn(loginFields.username, loginFields.password).then(
-              //     () => {
-              //       setLogin(true);
-              //     },
-              //   );
-              // }}
-              onClick={loginClick}
+              onClick={e => {
+                //console.log(loginFields);
+                Auth.signIn(loginFields.username, loginFields.password).then(
+                  () => {
+                    setLogin(true);
+                  },
+                );
+              }}
             >
               Login
             </button>
           </div>
         </div>
       )}
-      {login && settingsReady && (
-        <DefaultApp
-          appSyncClient={clientHandler.current}
-          prifinaID={prifinaID.current}
-          GraphQLClient={GRAPHQL}
-        />
-      )}
+      {login && settingsReady && <div>OK</div>}
       {!settingsReady && <div />}
     </>
   );
 };
 
 defaultSSOApp.story = {
-  name: "SSO App",
+  name: "Default App",
 };
 
 defaultSSOApp.story = {
-  name: "SSO App",
+  name: "SSO Default APP",
 };
