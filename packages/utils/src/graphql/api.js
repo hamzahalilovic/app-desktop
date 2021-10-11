@@ -12,6 +12,10 @@ import {
   listDataSources,
   getLoginUserIdentityPool,
   listApps,
+  listSystemNotifications,
+  listSystemNotificationsByDate,
+  getSystemNotificationCount,
+  getRequestToken,
 } from "./queries";
 import {
   verifyCode,
@@ -26,6 +30,9 @@ import {
   deletePrifinaSession,
   newAppVersion,
   addAppVersion,
+  addSystemNotification,
+  createSystemNotification,
+  updatePrifinaUser,
 } from "./mutations";
 
 //import Amplify, { Auth, API } from "aws-amplify";
@@ -273,6 +280,76 @@ export const addAppVersionMutation = (API, input) => {
   return API.graphql({
     query: addAppVersion,
     variables: { input: input },
+    authMode: "AMAZON_COGNITO_USER_POOLS",
+  });
+};
+
+export const addSystemNotificationMutation = (API, input) => {
+  return API.graphql({
+    query: addSystemNotification,
+    variables: { input: input },
+    authMode: "AMAZON_COGNITO_USER_POOLS",
+  });
+};
+
+export const createSystemNotificationMutation = (API, input) => {
+  return API.graphql({
+    query: createSystemNotification,
+    variables: { input: input },
+    authMode: "AMAZON_COGNITO_USER_POOLS",
+  });
+};
+
+export const getSystemNotificationCountQuery = (API, id) => {
+  //console.log("API ", id);
+  return API.graphql({
+    query: getSystemNotificationCount,
+    variables: { id: id },
+    authMode: "AMAZON_COGNITO_USER_POOLS",
+  });
+};
+
+export const listSystemNotificationsQuery = (API, opts) => {
+  // AMAZON_COGNITO_USER_POOLS
+  return API.graphql({
+    query: listSystemNotifications,
+    variables: {
+      filter: opts.filter || {},
+      limit: opts.limit || 100,
+      sortDirection: opts.sortDirection || "DESC",
+      nextToken: opts.nextToken || null,
+    },
+    authMode: "AMAZON_COGNITO_USER_POOLS",
+  });
+};
+
+export const listSystemNotificationsByDateQuery = (API, opts) => {
+  // AMAZON_COGNITO_USER_POOLS
+  return API.graphql({
+    query: listSystemNotificationsByDate,
+    variables: {
+      owner: opts.owner,
+      filter: opts.filter || {},
+      limit: opts.limit || 100,
+      sortDirection: opts.sortDirection || "DESC",
+      nextToken: opts.nextToken || null,
+    },
+    authMode: "AMAZON_COGNITO_USER_POOLS",
+  });
+};
+
+export const updatePrifinaUserMutation = (API, input) => {
+  return API.graphql({
+    query: updatePrifinaUser,
+    variables: { input: input },
+    authMode: "AMAZON_COGNITO_USER_POOLS",
+  });
+};
+
+export const getRequestTokenQuery = (API, id, source) => {
+  return API.graphql({
+    query: getRequestToken,
+    variables: { id: id, source: source },
     authMode: "AMAZON_COGNITO_USER_POOLS",
   });
 };
