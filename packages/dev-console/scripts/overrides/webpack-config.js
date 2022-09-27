@@ -51,6 +51,7 @@ const override = config => {
 'react-dom': require.resolve('./node_modules/react-dom'),
   */
   config.resolve.fallback = { http: false, https: false };
+  config.devtool = "eval-cheap-module-source-map";
   return config;
 };
 
