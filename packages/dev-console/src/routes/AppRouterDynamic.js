@@ -15,9 +15,9 @@ const Sandbox = React.lazy(() => import("../pages/Sandbox"));
 const NewApp = React.lazy(() => import("../pages/NewApp"));
 const Register = React.lazy(() => import("../pages/Register"));
 const Login = React.lazy(() => import("../pages/Login"));
+const ProjectDetails = React.lazy(() => import("../pages/ProjectDetails"));
 
 const UploadApp = React.lazy(() => import("../components/UploadApp"));
-
 
 //const RemoteTest = React.lazy(() => import("../pages/RemoteTest"));
 
@@ -25,18 +25,26 @@ const UploadApp = React.lazy(() => import("../components/UploadApp"));
 
 export default () => (
   <Routes>
-    <Route element={<AuthLayout />} >
+    <Route element={<AuthLayout />}>
       <Route path="/upload" element={<UploadApp />} />
       <Route path="/new-app" element={<NewApp />} />
       <Route path="/admin" element={<Admin />} />
       <Route path="/sandbox" element={<Sandbox />} />
       <Route path="/home" element={<Home />} />
+      <Route path="/project-details" element={<ProjectDetails />} />
       <Route path="/register" element={<Register />} />
     </Route>
-    <Route element={<UnAuthLayout />} >
+    <Route element={<UnAuthLayout />}>
       <Route path="/login" element={<Login />} />
     </Route>
-    <Route path="/" element={<React.Suspense fallback={"Loading routing..."}><Home /></React.Suspense>} />
+    <Route
+      path="/"
+      element={
+        <React.Suspense fallback={"Loading routing..."}>
+          <Home />
+        </React.Suspense>
+      }
+    />
     <Route path="*" element={<NotFoundPage />} />
   </Routes>
 );

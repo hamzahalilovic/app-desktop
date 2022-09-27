@@ -11,3 +11,9 @@ export const AccountContext = createContext(null);
 export function useAccountContext() {
   return useContext(AccountContext);
 }
+
+export const AppStudioContext = createContext(null);
+
+export function useAppStudioContext() {
+  return useContext(AppStudioContext);
+}

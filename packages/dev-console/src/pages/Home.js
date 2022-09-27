@@ -3,6 +3,14 @@
 import React, { useEffect, useState, useRef, useCallback } from "react";
 
 import {
+  createSearchParams,
+  // Link,
+  useNavigate,
+  useNavigationType,
+  useSearchParams,
+} from "react-router-dom";
+
+import {
   Box,
   Flex,
   Text,
@@ -30,6 +38,7 @@ import {
   i18n,
   createClient,
   SidebarMenu,
+  AppStudioContext,
 } from "@prifina-apps/utils";
 
 i18n.init();
@@ -39,7 +48,6 @@ import { API as GRAPHQL, Auth } from "aws-amplify";
 import AWSAppSyncClient, { AUTH_TYPE } from "aws-appsync";
 
 //import Amplify, { Auth, API as GRAPHQL } from "aws-amplify";
-
 
 import { StyledBox } from "../components/DefaultBackground";
 
@@ -79,67 +87,19 @@ import mdiWidget from "@iconify/icons-mdi/widgets";
 import mdiBookOpenVariant from "@iconify/icons-mdi/book-open-variant";
 import mdiSitemap from "@iconify/icons-mdi/sitemap";
 
-import ProjectDetails from "../components/ProjectDetails";
+import ProjectDetails from "./ProjectDetails";
 import Resources from "../components/Resources";
+import Content from "../components/Content";
 
 // Create a default prop getter
 const defaultPropGetter = () => ({});
 
-const Content = ({
-  Component,
-  initials,
-  notificationCount,
-  updateNotificationHandler,
-  appSyncClient,
-  activeUser,
-  ...props
-}) => {
-  const userMenu = useUserMenu();
-  console.log(
-    "USERMENU DEV APP INIT  ",
-    { ...props },
-
-    initials,
-    notificationCount,
-    typeof updateNotificationHandler,
-    appSyncClient,
-    activeUser,
-  );
-
-  userMenu.setClientHandler(appSyncClient);
-  userMenu.setActiveUser(activeUser);
-  useEffect(() => {
-    userMenu.show({
-      initials: initials,
-      effect: { hover: { width: 42 } },
-      notifications: notificationCount,
-      RecentApps: [],
-      PrifinaGraphQLHandler: GRAPHQL,
-      prifinaID: activeUser.uuid,
-    });
-  }, []);
-
-  updateNotificationHandler(userMenu.onUpdate);
-
-  return <Component data={props.data} currentUser={props.currentUser} />;
-};
-
-Content.propTypes = {
-  Component: PropTypes.elementType.isRequired,
-  initials: PropTypes.string,
-  notificationCount: PropTypes.number,
-  updateNotificationHandler: PropTypes.func,
-  appSyncClient: PropTypes.instanceOf(Object),
-  activeUser: PropTypes.instanceOf(Object),
-  currentUser: PropTypes.instanceOf(Object),
-  data: PropTypes.instanceOf(Array),
-};
-
 const Main = ({ data, currentUser }) => {
-
   const { colors } = useTheme();
 
   const toast = useToast();
+
+  const navigate = useNavigate();
 
   const versionStatus = [
     "init",
@@ -175,6 +135,53 @@ const Main = ({ data, currentUser }) => {
     status,
   });
 
+  // onChange={(event) => {
+  //   setSearchParams(
+  //     createSearchParams({ fruit: event.target.value })
+  //   );
+  // }}
+
+  // let [searchParams, setSearchParams] = useSearchParams();
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const openProject = props => {
+    navigate({
+      pathname: "/project-details",
+      search: createSearchParams({
+        id: props.row.values.id,
+      }).toString(),
+    });
+  };
+
+  //   search: `?${createSearchParams({
+  //     allValues: allValues,
+  //   })}`,
+  // });
+
+  // setSearchParams({
+  //   ...allValues,
+  //   name: props.cell.value,
+  //   id: props.row.values.id,
+  //   appType: props.row.values.appType,
+  //   version: props.row.values.version,
+  //   publisher: props.row.original.publisher,
+  //   category: props.row.original.category,
+  //   deviceSupport: props.row.original.deviceSupport,
+  //   languages: props.row.original.languages,
+  //   age: props.row.original.age,
+  //   keyFeatures: props.row.original.keyFeatures,
+  //   shortDescription: props.row.original.shortDescription,
+  //   longDescription: props.row.original.longDescription,
+  //   userHeld: props.row.original.userHeld,
+  //   userGenerated: props.row.original.userGenerated,
+  //   public: props.row.original.public,
+  //   icon: props.row.original.icon,
+  //   dataSources: props.row.original.dataSources,
+  //   remoteUrl: props.row.original.remoteUrl,
+  //   status: props.row.original.status,
+  // });
+
   const Columns = [
     {
       Header: "Name",
@@ -185,29 +192,31 @@ const Main = ({ data, currentUser }) => {
         return (
           <Text
             onClick={() => {
-              setStep(3);
-              setAllValues({
-                ...allValues,
-                name: props.cell.value,
-                id: props.row.values.id,
-                appType: props.row.values.appType,
-                version: props.row.values.version,
-                publisher: props.row.original.publisher,
-                category: props.row.original.category,
-                deviceSupport: props.row.original.deviceSupport,
-                languages: props.row.original.languages,
-                age: props.row.original.age,
-                keyFeatures: props.row.original.keyFeatures,
-                shortDescription: props.row.original.shortDescription,
-                longDescription: props.row.original.longDescription,
-                userHeld: props.row.original.userHeld,
-                userGenerated: props.row.original.userGenerated,
-                public: props.row.original.public,
-                icon: props.row.original.icon,
-                dataSources: props.row.original.dataSources,
-                remoteUrl: props.row.original.remoteUrl,
-                status: props.row.original.status,
-              });
+              // setStep(3);
+
+              // setAllValues({
+              //   ...allValues,
+              //   name: props.cell.value,
+              //   id: props.row.values.id,
+              //   appType: props.row.values.appType,
+              //   version: props.row.values.version,
+              //   publisher: props.row.original.publisher,
+              //   category: props.row.original.category,
+              //   deviceSupport: props.row.original.deviceSupport,
+              //   languages: props.row.original.languages,
+              //   age: props.row.original.age,
+              //   keyFeatures: props.row.original.keyFeatures,
+              //   shortDescription: props.row.original.shortDescription,
+              //   longDescription: props.row.original.longDescription,
+              //   userHeld: props.row.original.userHeld,
+              //   userGenerated: props.row.original.userGenerated,
+              //   public: props.row.original.public,
+              //   icon: props.row.original.icon,
+              //   dataSources: props.row.original.dataSources,
+              //   remoteUrl: props.row.original.remoteUrl,
+              //   status: props.row.original.status,
+              // });
+              openProject(props);
             }}
           >
             {props.cell.value}
@@ -443,149 +452,159 @@ const Main = ({ data, currentUser }) => {
     fetchDataManually().catch("COULD NOT FETCH DATA", console.error);
   }, [step]);
 
-  return (
-    <React.Fragment>
-      <DevConsoleSidebar items={menuItems} />
-      <C.NavbarContainer bg="basePrimary">
-        <DevConsoleLogo className="appStudio" />
-      </C.NavbarContainer>
+  const passedData = data;
+  console.log("passedData", passedData);
 
-      {/* <StyledBox> */}
-      <C.ContentContainer>
-        {step === 0 && (
-          <>
-            {projectDialogOpen && (
-              <CreateProjectModal
-                onClose={onDialogClose}
-                onButtonClick={onDialogClick}
-              // isOpen={projectDialogOpen}
-              />
-            )}
-            <Flex flexDirection="column" alignItems="center" mt="42px">
-              <Image src={dashboardBanner} style={{ position: "relative" }} />
-              <Flex
-                textAlign="center"
-                width="506px"
-                height="196px"
-                flexDirection="column"
-                justifyContent="space-between"
-                alignItems="center"
-                position="absolute"
-                top="243px"
-              >
-                <Text fontSize="xl">{i18n.__("createYourFirstProject")}</Text>
-                <Text color={colors.textMuted} fontSize={20}>
-                  {i18n.__("dashboardText")}
-                </Text>
-                <Button
-                  size="sm"
-                  bg={colors.baseAccent}
-                  onClick={() => {
-                    setProjectDialogOpen(true);
-                  }}
+  return (
+    <AppStudioContext.Provider
+      value={{
+        passedData,
+        currentUser,
+      }}
+    >
+      <React.Fragment>
+        <DevConsoleSidebar items={menuItems} />
+        <C.NavbarContainer bg="basePrimary">
+          <DevConsoleLogo className="appStudio" />
+        </C.NavbarContainer>
+
+        {/* <StyledBox> */}
+        <C.ContentContainer>
+          {step === 0 && (
+            <>
+              {projectDialogOpen && (
+                <CreateProjectModal
+                  onClose={onDialogClose}
+                  onButtonClick={onDialogClick}
+                  // isOpen={projectDialogOpen}
+                />
+              )}
+              <Flex flexDirection="column" alignItems="center" mt="42px">
+                <Image src={dashboardBanner} style={{ position: "relative" }} />
+                <Flex
+                  textAlign="center"
+                  width="506px"
+                  height="196px"
+                  flexDirection="column"
+                  justifyContent="space-between"
+                  alignItems="center"
+                  position="absolute"
+                  top="243px"
                 >
-                  {i18n.__("newProject")}
-                </Button>
+                  <Text fontSize="xl">{i18n.__("createYourFirstProject")}</Text>
+                  <Text color={colors.textMuted} fontSize={20}>
+                    {i18n.__("dashboardText")}
+                  </Text>
+                  <Button
+                    size="sm"
+                    bg={colors.baseAccent}
+                    onClick={() => {
+                      setProjectDialogOpen(true);
+                    }}
+                  >
+                    {i18n.__("newProject")}
+                  </Button>
+                </Flex>
               </Flex>
-            </Flex>
-            <Box paddingLeft="62px" paddingTop="100px">
-              <Text fontSize="xl">{i18n.__("keyResourcesHeading")}</Text>
-              <Text fontSize="md" mt="12px">
-                {i18n.__("keyResourcesPara")}
-              </Text>
-              <Flex
-                paddingTop="35px"
-                width="1027px"
-                justifyContent="space-between"
-              >
-                {resourceCardItems.map((item, index) => (
-                  <C.ResourceCard
-                    key={index}
-                    marginRight="42px"
-                    src={item.src}
-                    title={item.title}
-                    description={item.description}
-                  />
-                ))}
-              </Flex>
-            </Box>
-          </>
-        )}
-        {/* PROJECTS */}
-        {step === 2 && (
-          <>
-            {projectDialogOpen && (
-              <CreateProjectModal
-                onClose={onDialogClose}
-                onButtonClick={onDialogClick}
-              // isOpen={projectDialogOpen}
-              />
-            )}
-            <Flex paddingTop="48px">
-              <Flex
-                bg="baseMuted"
-                flexDirection="column"
-                borderRadius="10px"
-                padding="16px"
-              >
-                {upload && (
-                  <UploadApp row={selectedRow.current} close={closeClick} />
-                )}
-                {!upload && (
-                  <>
-                    <Flex
-                      alignItems="center"
-                      justifyContent="space-between"
-                      marginBottom="40px"
-                    >
-                      <Text textStyle="h3">{i18n.__("projects")}</Text>
-                      <Button
-                        onClick={() => {
-                          setProjectDialogOpen(true);
-                        }}
+              <Box paddingLeft="62px" paddingTop="100px">
+                <Text fontSize="xl">{i18n.__("keyResourcesHeading")}</Text>
+                <Text fontSize="md" mt="12px">
+                  {i18n.__("keyResourcesPara")}
+                </Text>
+                <Flex
+                  paddingTop="35px"
+                  width="1027px"
+                  justifyContent="space-between"
+                >
+                  {resourceCardItems.map((item, index) => (
+                    <C.ResourceCard
+                      key={index}
+                      marginRight="42px"
+                      src={item.src}
+                      title={item.title}
+                      description={item.description}
+                    />
+                  ))}
+                </Flex>
+              </Box>
+            </>
+          )}
+          {/* PROJECTS */}
+          {step === 2 && (
+            <>
+              {projectDialogOpen && (
+                <CreateProjectModal
+                  onClose={onDialogClose}
+                  onButtonClick={onDialogClick}
+                  // isOpen={projectDialogOpen}
+                />
+              )}
+              <Flex paddingTop="48px">
+                <Flex
+                  bg="baseMuted"
+                  flexDirection="column"
+                  borderRadius="10px"
+                  padding="16px"
+                >
+                  {upload && (
+                    <UploadApp row={selectedRow.current} close={closeClick} />
+                  )}
+                  {!upload && (
+                    <>
+                      <Flex
+                        alignItems="center"
+                        justifyContent="space-between"
+                        marginBottom="40px"
                       >
-                        {i18n.__("newProject")}
-                      </Button>
-                    </Flex>
-                    <div className="tableWrap">
-                      {updatedData.length === 0 && (
-                        <div
-                          style={{
-                            //same as table
-                            width: 1000,
+                        <Text textStyle="h3">{i18n.__("projects")}</Text>
+                        <Button
+                          onClick={() => {
+                            setProjectDialogOpen(true);
                           }}
                         >
-                          <Text m={2}>{i18n.__("noApps")}</Text>
-                        </div>
-                      )}
-                      {updatedData.length > 0 && (
-                        <Table columns={Columns} data={updatedData} />
-                      )}
-                    </div>
-                  </>
-                )}
+                          {i18n.__("newProject")}
+                        </Button>
+                      </Flex>
+                      <div className="tableWrap">
+                        {updatedData.length === 0 && (
+                          <div
+                            style={{
+                              //same as table
+                              width: 1000,
+                            }}
+                          >
+                            <Text m={2}>{i18n.__("noApps")}</Text>
+                          </div>
+                        )}
+                        {updatedData.length > 0 && (
+                          <Table columns={Columns} data={updatedData} />
+                        )}
+                      </div>
+                    </>
+                  )}
+                </Flex>
               </Flex>
-            </Flex>
-          </>
-        )}
-        {step === 3 && (
-          <>
-            <ProjectDetails
-              allValues={allValues}
-              setAllValues={setAllValues}
-              setStep={setStep}
-            />
-          </>
-        )}
-        {/* RESOURCES */}
-        {step === 4 && (
-          <>
-            <Resources />
-          </>
-        )}
-      </C.ContentContainer>
-      {/* </StyledBox> */}
-    </React.Fragment>
+            </>
+          )}
+          {step === 3 && (
+            <>
+              <ProjectDetails
+                allValues={allValues}
+                setAllValues={setAllValues}
+                // setStep={setStep}
+              />
+            </>
+          )}
+          {/* RESOURCES */}
+          {step === 4 && (
+            <>
+              <Resources />
+            </>
+          )}
+        </C.ContentContainer>
+        {/* </StyledBox> */}
+      </React.Fragment>
+    </AppStudioContext.Provider>
   );
 };
 
@@ -617,22 +636,22 @@ const Home = props => {
   const notificationCount = useRef(0);
   let AppComponent = Main;
 
-  const xcreateClient = (endpoint, region) => {
-    Auth.currentCredentials().then(c => {
-      console.log("DEV USER CLIENT ", c);
-    });
-    const client = new AWSAppSyncClient({
-      url: endpoint,
-      region: region,
-      auth: {
-        type: AUTH_TYPE.AWS_IAM,
-        credentials: () => Auth.currentCredentials(),
-      },
+  // const xcreateClient = (endpoint, region) => {
+  //   Auth.currentCredentials().then(c => {
+  //     console.log("DEV USER CLIENT ", c);
+  //   });
+  //   const client = new AWSAppSyncClient({
+  //     url: endpoint,
+  //     region: region,
+  //     auth: {
+  //       type: AUTH_TYPE.AWS_IAM,
+  //       credentials: () => Auth.currentCredentials(),
+  //     },
 
-      disableOffline: true,
-    });
-    return client;
-  };
+  //     disableOffline: true,
+  //   });
+  //   return client;
+  // };
 
   const updateNotification = useCallback(handler => {
     //notificationHandler.current = handler;
@@ -717,10 +736,10 @@ const Home = props => {
   return (
     <>
       <ToastContextProvider>
-        {initClient && (<>
-
-          <Content Component={AppComponent} {...componentProps.current} />
-        </>
+        {initClient && (
+          <>
+            <Content Component={AppComponent} {...componentProps.current} />
+          </>
         )}
         {!initClient && (
           <div>
